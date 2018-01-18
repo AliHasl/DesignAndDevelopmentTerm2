@@ -1,31 +1,31 @@
-package fund.raising;
+package Super.league;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class FundRaisingTeam {
+public class SuperLeague {
 
-    private static final String TEAM_NAME = "Poppleton Dogs Home";
+    private static final String TEAM_NAME = "Rugby Super League";
 
-    private ArrayList <FundRaiser> fundRaisers;
+    private ArrayList <Team> teams;
 
-    public FundRaisingTeam () {
-        fundRaisers = new ArrayList<> ();
+    public SuperLeague() {
+        teams = new ArrayList<> ();
     }
 
-    public void addFundRaiser (FundRaiser fr) {
-        this.fundRaisers.add (fr);
+    public void addTeam(Team sl) {
+        this.teams.add (sl);
     }
 
     public void sortTeam () {
-        Collections.sort (this.fundRaisers);
+        Collections.sort (this.teams);
     }
 
     public double getTotalRaised () {
 
         double totalRaised = 0.0;
 
-        for (FundRaiser fr : fundRaisers) {
+        for (Team fr : teams) {
             totalRaised += fr.getAmountRaised ();
         }
 
@@ -43,7 +43,7 @@ public class FundRaisingTeam {
 
     public void printTeam () {
 
-        if (this.fundRaisers.isEmpty ()) {
+        if (this.teams.isEmpty ()) {
             System.out.println ("No fund raisers in this team.");
         }
         else {
@@ -51,7 +51,7 @@ public class FundRaisingTeam {
 
             System.out.println ();
 
-            for (FundRaiser fr : fundRaisers) {
+            for (Team fr : teams) {
                 fr.printFormatted ();
             }
         }
